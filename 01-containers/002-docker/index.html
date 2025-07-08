@@ -1,0 +1,537 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>002 docker - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-docker-cli-dockerfile-syntax" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              002 docker
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-intro/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulo 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-docker-cli-dockerfile-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      🐳 1. Docker CLI &amp; Dockerfile Syntax
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🐳 1. Docker CLI &amp; Dockerfile Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎓 Concept:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-docker-compose-for-multi-service-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ 2. Docker Compose for Multi-Service Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ 2. Docker Compose for Multi-Service Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concept_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎓 Concept:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-base-image-selection-vs-multistage-builds" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 3. Base Image Selection vs Multistage Builds
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 3. Base Image Selection vs Multistage Builds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concept_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎓 Concept:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-container-networking-and-volumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌐 4. Container Networking and Volumes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌐 4. Container Networking and Volumes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concept_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎓 Concept:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-debugging-containers-exec-logs-inspect" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧰 5. Debugging Containers (exec, logs, inspect)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧰 5. Debugging Containers (exec, logs, inspect)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concept_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎓 Concept:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>002 docker</h1>
+
+<h2 id="1-docker-cli-dockerfile-syntax">🐳 <strong>1. Docker CLI &amp; Dockerfile Syntax</strong></h2>
+<h3 id="concept">🎓 Concept:</h3>
+<p>Docker is like a <strong>kitchen</strong>, and the <code>Dockerfile</code> is your <strong>recipe</strong>.</p>
+<p>Imagine you’re a chef. You don’t cook freestyle every time — you follow a recipe. That’s exactly what a <code>Dockerfile</code> does: it tells Docker how to <strong>build your application image</strong>.</p>
+<ul>
+<li>First, you <strong>choose a base image</strong> — like picking the type of kitchen you’ll use (e.g., <code>node:18</code> or <code>python:3.11-slim</code>).</li>
+<li>Then you add the <strong>ingredients</strong> — your code and dependencies.</li>
+<li>Finally, you define the <strong>command to run the app</strong>, like turning on the stove.</li>
+</ul>
+<p>To <strong>build</strong> the image from that recipe, you use <code>docker build</code>. That creates a new container image, kind of like baking a cake and wrapping it up for delivery.</p>
+<p>Once the image is ready, you can run it using <code>docker run</code>, which launches your app inside an isolated container — like cooking and serving the meal.</p>
+<p>👉 To try this: write a <code>Dockerfile</code>, build it, and run it. Example:</p>
+<pre><code class="language-bash">docker build -t myapp .
+docker run -p 3000:3000 myapp
+</code></pre>
+<p>📚 <a href="https://docs.docker.com/engine/reference/builder/">Learn more (official docs)</a></p>
+<hr />
+<h2 id="2-docker-compose-for-multi-service-setup">⚙️ <strong>2. Docker Compose for Multi-Service Setup</strong></h2>
+<h3 id="concept_1">🎓 Concept:</h3>
+<p>Most real-world apps are not solo artists — they’re <strong>bands</strong>. Your backend is the singer 🎤, your database is the drummer 🥁, and maybe your frontend is the DJ 🎧.</p>
+<p>Managing all these with <code>docker run</code> manually would be chaotic — like having every musician show up at a different time with no plan.</p>
+<p>That’s where <code>docker-compose</code> comes in. It’s your <strong>conductor</strong>.</p>
+<p>With a <code>docker-compose.yml</code> file, you define multiple services — each one a container — and describe how they work together:</p>
+<ul>
+<li>Which image or Dockerfile to use</li>
+<li>Which ports to expose</li>
+<li>What environment variables or volumes to include</li>
+<li>How the services connect to each other internally</li>
+</ul>
+<p>You then launch all services at once with just:</p>
+<pre><code class="language-bash">docker-compose up
+</code></pre>
+<p>They’re all orchestrated and networked automatically — just like a band in sync.</p>
+<p>📚 <a href="https://docs.docker.com/compose/">Explore the Compose docs</a></p>
+<hr />
+<h2 id="3-base-image-selection-vs-multistage-builds">📦 <strong>3. Base Image Selection vs Multistage Builds</strong></h2>
+<h3 id="concept_2">🎓 Concept:</h3>
+<p>When building something (like a house), you don’t bring the entire warehouse of tools to the construction site — just what you need.</p>
+<p>In Docker, the <strong>base image</strong> is your starting toolbox. Some are small (<code>alpine</code>, <code>slim</code>), and some are big (with compilers and build tools). Using a lighter image makes your app faster to download and start, and <strong>reduces attack surface</strong>.</p>
+<p>A <strong>multistage build</strong> is a way to use all your tools during the build stage (installing, compiling), but only <strong>ship the final clean result</strong>.</p>
+<p>For example:</p>
+<ol>
+<li>First stage: build the frontend using Node.js</li>
+<li>Second stage: copy the built files into a tiny Nginx container</li>
+</ol>
+<p>This results in a small, production-ready image without any of the dev tools inside.</p>
+<pre><code class="language-Dockerfile"># Stage 1 - build
+FROM node:18 as builder
+WORKDIR /app
+COPY . .
+RUN npm install &amp;&amp; npm run build
+
+# Stage 2 - run
+FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
+</code></pre>
+<p>📚 <a href="https://docs.docker.com/build/building/multi-stage/">Multistage builds guide</a></p>
+<hr />
+<h2 id="4-container-networking-and-volumes">🌐 <strong>4. Container Networking and Volumes</strong></h2>
+<h3 id="concept_3">🎓 Concept:</h3>
+<p>Think of each container like a <strong>room in a house</strong>.</p>
+<ul>
+<li><strong>Ports</strong> are the doors — they allow things to go in and out.</li>
+<li><strong>Networks</strong> are like walkie-talkies between rooms — containers can talk to each other over a shared private network.</li>
+<li><strong>Volumes</strong> are shared cabinets — places to store things that shouldn’t be lost when the container is deleted (like databases or uploaded files).</li>
+</ul>
+<p>By default, containers are isolated. But with Docker Compose or custom networks, they can talk to each other by name (e.g., <code>db:5432</code>).</p>
+<p>Volumes are created to make data <strong>persist</strong>. For example, if you delete a container, but want the database data to survive, you mount a volume like this:</p>
+<pre><code class="language-yaml">volumes:
+  - dbdata:/var/lib/postgresql/data
+</code></pre>
+<p>This way, even if your database container crashes or is updated, the data stays safe.</p>
+<p>📚 <a href="https://docs.docker.com/network/">Docker networking docs</a>
+📚 <a href="https://docs.docker.com/storage/volumes/">Docker volumes docs</a></p>
+<hr />
+<h2 id="5-debugging-containers-exec-logs-inspect">🧰 <strong>5. Debugging Containers (exec, logs, inspect)</strong></h2>
+<h3 id="concept_4">🎓 Concept:</h3>
+<p>A container is like a <strong>sealed box</strong> running your application. When something doesn’t work, you need to become a <strong>mechanic</strong> with the right tools.</p>
+<ul>
+<li>Use <code>docker logs</code> to see what’s going wrong — it’s like reading the <strong>warning lights</strong> on a car dashboard.</li>
+<li>Use <code>docker exec -it &lt;container&gt; /bin/sh</code> to <strong>get inside the container</strong> — like opening the hood to check things directly.</li>
+<li>Use <code>docker inspect</code> to get <strong>detailed information</strong> about the container — the full spec sheet, network, volumes, environment variables, and more.</li>
+</ul>
+<p>When your app doesn’t start or behaves strangely, this is how you <strong>investigate</strong>.</p>
+<pre><code class="language-bash">docker logs myapp
+docker exec -it myapp /bin/sh
+docker inspect myapp
+</code></pre>
+<p>These tools are <strong>essential</strong> for real-world debugging and help you build the habit of not guessing — but inspecting and understanding.</p>
+<p>📚 <a href="https://docs.docker.com/config/containers/logging/">Official debugging docs</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>
