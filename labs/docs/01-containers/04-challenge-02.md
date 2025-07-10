@@ -16,3 +16,6 @@ A developer pushed a container image that “works on their machine” — but f
 * Use `docker inspect <container_id> | jq` for cleaner output.
 
 🧠 *Hint:* Don’t just restart. **Investigate.** Logs usually hold the key.
+
+---
+> 🔁 *Quick Refresher:* Need a recap? Revisit the lesson on [Debugging Containers](02-docker.md#5-debugging-containers-exec-logs-inspect).

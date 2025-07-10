@@ -1,7 +1,5 @@
 ## 🐳 **1. Docker CLI & Dockerfile Syntax**
 
-### 🎓 Concept:
-
 Docker is like a **kitchen**, and the `Dockerfile` is your **recipe**.
 
 Imagine you’re a chef. You don’t cook freestyle every time — you follow a recipe. That’s exactly what a `Dockerfile` does: it tells Docker how to **build your application image**.
@@ -26,8 +24,6 @@ docker run -p 3000:3000 myapp
 ---
 
 ## ⚙️ **2. Docker Compose for Multi-Service Setup**
-
-### 🎓 Concept:
 
 Most real-world apps are not solo artists — they’re **bands**. Your backend is the singer 🎤, your database is the drummer 🥁, and maybe your frontend is the DJ 🎧.
 
@@ -55,8 +51,6 @@ They’re all orchestrated and networked automatically — just like a band in s
 ---
 
 ## 📦 **3. Base Image Selection vs Multistage Builds**
-
-### 🎓 Concept:
 
 When building something (like a house), you don’t bring the entire warehouse of tools to the construction site — just what you need.
 
@@ -89,8 +83,6 @@ COPY --from=builder /app/dist /usr/share/nginx/html
 
 ## 🌐 **4. Container Networking and Volumes**
 
-### 🎓 Concept:
-
 Think of each container like a **room in a house**.
 
 * **Ports** are the doors — they allow things to go in and out.
@@ -114,8 +106,6 @@ This way, even if your database container crashes or is updated, the data stays 
 ---
 
 ## 🧰 **5. Debugging Containers (exec, logs, inspect)**
-
-### 🎓 Concept:
 
 A container is like a **sealed box** running your application. When something doesn’t work, you need to become a **mechanic** with the right tools.
 

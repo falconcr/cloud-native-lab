@@ -42,7 +42,7 @@ To follow along, you’ll need:
 
 ## 🤝 Contributions Welcome
 
-Feel free to open issues, submit pull requests, or suggest improvements. Let’s build this learning journey together.
+Feel free to open issues, submit pull requests, or suggest improvements. Let’s build this learning journey together. Check out the [Contributing Guide](https://github.com/falconcr/cloud-native-lab/blob/main/labs/docs/CONTRIBUTING.md) to get started!
 
 ---
 
