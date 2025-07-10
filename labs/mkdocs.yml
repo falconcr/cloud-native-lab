@@ -1,4 +1,4 @@
-site_name: My Docs
+site_name: Cloud Native lab
 nav:
   - Home: index.md
   - Containers:
@@ -9,5 +9,6 @@ nav:
       - "Challenge 3": 01-containers/05-challenge-03.md
       - "Challenge 4": 01-containers/06-challenge-04.md
       - "Challenge 5": 01-containers/07-challenge-05.md
+  - CONTRIBUTING: CONTRIBUTING.md
 theme:
   name: material
