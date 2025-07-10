@@ -1,0 +1,13 @@
+site_name: My Docs
+nav:
+  - Home: index.md
+  - Containers:
+      - "Containers?": 01-containers/01-containers.md
+      - "What is Docker?": 01-containers/02-docker.md
+      - "Challenge 1": 01-containers/03-challenge-01.md
+      - "Challenge 2": 01-containers/04-challenge-02.md
+      - "Challenge 3": 01-containers/05-challenge-03.md
+      - "Challenge 4": 01-containers/06-challenge-04.md
+      - "Challenge 5": 01-containers/07-challenge-05.md
+theme:
+  name: material
