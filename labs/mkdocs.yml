@@ -9,6 +9,8 @@ nav:
       - "Challenge 3": 01-containers/05-challenge-03.md
       - "Challenge 4": 01-containers/06-challenge-04.md
       - "Challenge 5": 01-containers/07-challenge-05.md
+  - Solutions:
+    - "Challenge 1": 03-challenge-01-sol.md
   - CONTRIBUTING: CONTRIBUTING.md
 theme:
   name: material
