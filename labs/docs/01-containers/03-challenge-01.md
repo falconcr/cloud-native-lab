@@ -19,3 +19,4 @@ docker run -p 3000:3000 cloudbakery
 ```
 
 🧠 *Hint:* If you're not sure how the `Dockerfile` should look, search for a minimal example with `node`.
+🔁 *Quick Refresher:* Need a recap? Revisit the lesson on [Docker CLI & Dockerfile Syntax](02-docker.md#1-docker-cli-dockerfile-syntax).
