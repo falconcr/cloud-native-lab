@@ -89,3 +89,7 @@ ping db
 ```
 
 ➡️ It works now.
+
+---
+
+> 🔁 *Quick Refresher:* Need a recap? Revisit the lesson on [Container Networking](02-docker.md#4-container-networking-and-volumes).

@@ -14,3 +14,6 @@ Refactor the Dockerfile to use **multistage builds**. Compile the app with Node.
 * Final image should be under 200MB!
 
 🧠 *Hint:* Think of this like making a sandwich: use all your messy ingredients in the kitchen, but only serve the final clean product to the customer.
+
+---
+> 🔁 *Quick Refresher:* Need a recap? Revisit the lesson on [Multistage Build](02-docker.md#3-base-image-selection-vs-multistage-builds).
